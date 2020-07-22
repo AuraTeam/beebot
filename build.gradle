@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.github.aurateam'
+version '1.0.0-BETA'
+mainClassName = 'com.github.aurateam.beebot.Application'
+
+repositories {
+    mavenCentral()
+    jcenter()
+
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    // Matt's commands framework
+    implementation 'me.mattstudios.utils:matt-framework-jda:1.1.14-BETA'
+
+    // Jda
+    implementation ('net.dv8tion:JDA:4.2.0_180') {
+        exclude module: 'opus-java'
+    }
+
+    // For javadocs
+    implementation 'org.apache.commons:commons-text:1.8'
+    implementation 'org.jsoup:jsoup:1.13.1'
+
+    // Logger
+    implementation 'org.slf4j:slf4j-log4j12:1.7.5'
+    implementation 'log4j:apache-log4j-extras:1.2.17'
+
+    // Config
+    implementation 'com.github.ipsk:configme:M-1.0'
+}
